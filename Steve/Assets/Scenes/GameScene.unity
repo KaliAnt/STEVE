@@ -249,5 +249,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1616514449857246, guid: 9e945a50cdffe1c4bae42be466bbcd1e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300408468922978, guid: 9e945a50cdffe1c4bae42be466bbcd1e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300408468922978, guid: 9e945a50cdffe1c4bae42be466bbcd1e, type: 3}
+      propertyPath: m_Name
+      value: Player_eye_1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463288147280024, guid: 9e945a50cdffe1c4bae42be466bbcd1e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703748509888054, guid: 9e945a50cdffe1c4bae42be466bbcd1e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513466510310132, guid: 9e945a50cdffe1c4bae42be466bbcd1e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513466510310132, guid: 9e945a50cdffe1c4bae42be466bbcd1e, type: 3}
+      propertyPath: m_Name
+      value: Player_eye_1.0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e945a50cdffe1c4bae42be466bbcd1e, type: 3}
