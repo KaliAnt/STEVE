@@ -16,7 +16,6 @@ public class Quit : MonoBehaviour {
 	
 	void TaskOnClick()
 	{
-		if(EditorApplication.isPlaying == false)
 			Application.Quit ();
 	}
 }
