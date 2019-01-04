@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 newPosition = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
         float distance = Vector3.Distance(newPosition, transform.position);
@@ -41,7 +41,7 @@ public class CameraController : MonoBehaviour
             transform.position = new Vector3(transform.position.x + newX, transform.position.y + newY, transform.position.z);
         }
 
-        if (distance <= maxDist)
+        if (distance <= maxDist + 1)
         {
             transform.position = Vector3.Lerp(transform.position, newPosition, cameraLerp);
         }
