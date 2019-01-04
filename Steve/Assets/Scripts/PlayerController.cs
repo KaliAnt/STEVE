@@ -105,6 +105,9 @@ public class PlayerController : MonoBehaviour
             forceY = minionSpawnForce * Mathf.Cos(angle);
 
             minionBody.velocity = new Vector3(forceX, forceY);
+            MinionScript minionScript = instance.GetComponent<MinionScript>();
+            minionScript.ownerPlayer = gameObject;
+            minionScript.target = target;
 
         }
     }
