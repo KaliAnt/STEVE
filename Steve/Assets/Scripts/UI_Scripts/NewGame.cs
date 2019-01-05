@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NewGame : MonoBehaviour {
 
@@ -14,6 +15,6 @@ public class NewGame : MonoBehaviour {
 	
 	void TaskOnClick()
 	{
-		Application.LoadLevel ("GameScene");
+		SceneManager.LoadScene("GameScene");
 	}	
 }
