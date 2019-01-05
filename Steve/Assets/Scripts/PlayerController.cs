@@ -18,14 +18,33 @@ public class PlayerController : MonoBehaviour
     public float resources;
     public Text text;
 
+    private List<GameObject> hiddenEyes = new List<GameObject>();
+    private List<GameObject> visibleEyes = new List<GameObject>();
+
 
     // Use this for initialization
     void Start()
     {
+        initializeEyes();
         transform = GetComponent<Transform>();
         rigidBody = GetComponent<Rigidbody2D>();
         currentNrOfMinions = 0;
         resources = 0;
+    }
+
+    void initializeEyes()
+    {
+        var eyeParent = this.gameObject.transform.GetChild(0);
+        int childrenCnt = eyeParent.childCount;
+
+        visibleEyes.Add(eyeParent.GetChild(0).gameObject);
+
+        for (int i = 1; i < childrenCnt; i++)
+        {
+            var child = eyeParent.GetChild(i).gameObject;
+            child.active = false;
+            this.hiddenEyes.Add(child);
+        }
     }
 
     // Update is called once per frame
@@ -66,7 +85,7 @@ public class PlayerController : MonoBehaviour
     public void minionReturn(float minedResource)
     {
         resources += minedResource * 100;
-        text.text = (int)resources + "#";
+        //text.text = (int)resources + "#";
         currentNrOfMinions--;
     }
 
