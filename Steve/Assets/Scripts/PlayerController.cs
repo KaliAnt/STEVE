@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public int currentNrOfMinions;
     public int minionSpawnForce;
     public float speed;
+    public float mapBound;
 
     public float resources;
     public Text text;
@@ -53,6 +54,15 @@ public class PlayerController : MonoBehaviour
 
         float movementX = joyStick.Horizontal;
         float movementY = joyStick.Vertical;
+
+        if (transform.position.x > mapBound)
+            transform.position = new Vector3(mapBound, transform.position.y);
+        if (transform.position.x < -mapBound)
+            transform.position = new Vector3(-mapBound, transform.position.y);
+        if (transform.position.y > mapBound)
+            transform.position = new Vector3(transform.position.x, mapBound);
+        if (movementY < -mapBound)
+            transform.position = new Vector3(transform.position.x, -mapBound);
 
         if (movementY != 0 || movementX != 0)
         {
