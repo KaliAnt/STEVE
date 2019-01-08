@@ -44,7 +44,7 @@ public class Generator
     private bool validateVector3(Vector3 proposal)
     {
         foreach(GameObject current in mapObjects) {
-            if (Mathf.Abs(current.transform.position.x - proposal.x) < 3 && Mathf.Abs(current.transform.position.y - proposal.y) < 3)
+            if (Mathf.Abs(current.transform.position.x - proposal.x) < 5 && Mathf.Abs(current.transform.position.y - proposal.y) < 5)
                 if(proposal.x < mapBound && proposal.x > -mapBound && proposal.y < mapBound && proposal.y > -mapBound)
                     return false;
         }

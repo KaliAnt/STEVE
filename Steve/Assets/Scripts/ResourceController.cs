@@ -10,6 +10,7 @@ public class ResourceController : MonoBehaviour
     public float currentCapacity;
     public Image capacityBar;
     public Image bar;
+    public int rarity;
 
     // Use this for initialization
     void Start()
