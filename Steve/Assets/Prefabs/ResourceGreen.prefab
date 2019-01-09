@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e268a5ed6a12134abb59ac4e5419828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCapacity: 300
-  currentCapacity: 300
+  maxCapacity: 250
+  currentCapacity: 250
   capacityBar: {fileID: 370083328151162403}
   bar: {fileID: 369936443112531109}
   rarity: 0

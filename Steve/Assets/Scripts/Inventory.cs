@@ -19,14 +19,14 @@ public class Inventory
 
     public void AddCurrencyAmount(float amount)
     {
-        currency =+ amount;
+        currency = currency + amount;
     }
 
     public bool SubstractCurrencyAmount(float amount)
     {
         if (amount < currency)
         {
-            currency -= amount;
+            currency = currency - amount;
             return true;
         }
         return false;
@@ -46,7 +46,7 @@ public class Inventory
     {
         if (size > 0)
         {
-            speed += size;
+            speed = size + speed;
             return true;
         }
         return false;
@@ -54,7 +54,7 @@ public class Inventory
 
     public void UpgradeFetchers(uint amount)
     {
-        fetchers += amount;
+        fetchers = fetchers + amount;
     }
 
     public uint GetEye(uint index)

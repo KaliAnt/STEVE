@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private List<GameObject> hiddenEyes = new List<GameObject>();
     private List<GameObject> visibleEyes = new List<GameObject>();
 
-    public Inventory inventory;
+    public static Inventory inventory;
 
 
     // Use this for initialization
@@ -65,6 +65,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int amount = (int)inventory.GetCurrency();
+        text.text = amount.ToString();
 
         float movementX = joyStick.Horizontal;
         float movementY = joyStick.Vertical;
@@ -124,7 +126,7 @@ public class PlayerController : MonoBehaviour
 
         if (movementY != 0 || movementX != 0)
         {
-            angle = Mathf.Atan2(movementX, movementY) * Mathf.Rad2Deg;
+            angle = Mathf.Atan2(movementY, movementX) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, (float)angle);
         }
 
