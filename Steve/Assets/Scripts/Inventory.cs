@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Inventory
 {
-    private int currency;
-    private int eyes;
-    private int speed;
-    private int fetchers;
+    private uint currency;
+    private uint[] eyes;
+    private float speed;
+    private uint fetchers;
 
-    public Inventory(int currency, int eyes, int speed, int fetchers)
+    public Inventory(uint currency, uint[] eyes, float speed, uint fetchers)
     {
         this.currency = currency;
         this.eyes = eyes;
@@ -17,19 +17,14 @@ public class Inventory
         this.fetchers = fetchers;
     }
 
-    public bool AddCurrencyAmount(int amount)
+    public void AddCurrencyAmount(uint amount)
     {
-        if (amount > 0)
-        {
-            currency += amount;
-            return true;
-        }
-        return false;
+        currency += amount;
     }
 
-    public bool SubstractCurrencyAmount(int amount)
+    public bool SubstractCurrencyAmount(uint amount)
     {
-        if (amount > 0 && amount < currency)
+        if (amount < currency)
         {
             currency -= currency;
             return true;
@@ -37,8 +32,47 @@ public class Inventory
         return false;
     }
 
-    public bool upgradeEye(int eyeNumber)
+    public bool UpgradeEye(uint index)
     {
+        if (index < 5)
+        {
+            if (eyes[index] > 0)
+                eyes[index]++;
+        }
         return false;
     }
+
+    public bool UpgradeSpeed(float size)
+    {
+        if (size > 0)
+        {
+            speed += size;
+            return true;
+        }
+        return false;
+    }
+
+    public void UpgradeFetchers(uint amount)
+    {
+        fetchers += amount;
+    }
+
+    public uint GetEye(uint index)
+    {
+        if (index < 5)
+            return eyes[index];
+        return 0;
+    }
+
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
+    public uint GetFetchers()
+    {
+        return fetchers;
+    }
+
+
 }

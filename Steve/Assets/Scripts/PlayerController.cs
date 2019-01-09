@@ -10,27 +10,30 @@ public class PlayerController : MonoBehaviour
     public Joystick joyStick;
     public Joystick rotateStick;
     public GameObject minion;
-    public int maxNrOfMinions;
-    public int currentNrOfMinions;
+    public uint maxNrOfMinions;
+    public uint currentNrOfMinions;
     public int minionSpawnForce;
     public float speed;
     public float mapBound;
 
-    public float resources;
+    public uint currency;
     public Text text;
 
     private List<GameObject> hiddenEyes = new List<GameObject>();
     private List<GameObject> visibleEyes = new List<GameObject>();
+
+    public Inventory inventory;
 
 
     // Use this for initialization
     void Start()
     {
         initializeEyes();
+        initializeInventory();
         transform = GetComponent<Transform>();
         rigidBody = GetComponent<Rigidbody2D>();
         currentNrOfMinions = 0;
-        resources = 0;
+
     }
 
     void initializeEyes()
@@ -43,9 +46,20 @@ public class PlayerController : MonoBehaviour
         for (int i = 1; i < childrenCnt; i++)
         {
             var child = eyeParent.GetChild(i).gameObject;
-            child.active = false;
+            child.SetActive(false);
             this.hiddenEyes.Add(child);
         }
+    }
+
+    void initializeInventory()
+    {
+        uint[] eyes = { 1, 0, 0, 0, 0 }; //level of eyes, 0 means hidden
+        inventory = new Inventory(currency, eyes, speed, maxNrOfMinions);
+    }
+
+    public Inventory GetInventory()
+    {
+        return inventory;
     }
 
     // Update is called once per frame
@@ -66,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
         if (movementY != 0 || movementX != 0)
         {
-            rigidBody.velocity = new Vector2(movementX * speed, movementY * speed);
+            rigidBody.velocity = new Vector2(movementX * inventory.GetSpeed(), movementY * inventory.GetSpeed());
         }
         else
         {
@@ -94,8 +108,8 @@ public class PlayerController : MonoBehaviour
 
     public void minionReturn(float minedResource)
     {
-        resources += minedResource * 100;
-        //text.text = (int)resources + "#";
+        inventory.AddCurrencyAmount((uint)minedResource * 100);
+        text.text = currency.ToString();
         currentNrOfMinions--;
     }
 
@@ -116,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
     public void spawnMinion(GameObject target)
     {
-        if (currentNrOfMinions < maxNrOfMinions)
+        if (currentNrOfMinions < inventory.GetFetchers())
         {
             GameObject instance = (GameObject)Instantiate(minion);
             currentNrOfMinions++;
