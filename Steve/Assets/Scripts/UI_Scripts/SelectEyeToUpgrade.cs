@@ -46,7 +46,7 @@ public class SelectEyeToUpgrade : MonoBehaviour
                 isActive = true;
                 info_text.text = "Upgraded Vison!";
             }
-            else info_text.text = "Insuficient Funds!";
+            else info_text.text = "Insufficient Funds!";
         }
     }
 }

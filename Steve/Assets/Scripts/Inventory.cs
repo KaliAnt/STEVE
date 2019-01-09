@@ -26,7 +26,7 @@ public class Inventory
     {
         if (amount < currency)
         {
-            currency -= currency;
+            currency -= amount;
             return true;
         }
         return false;
