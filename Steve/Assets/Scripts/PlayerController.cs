@@ -104,12 +104,14 @@ public class PlayerController : MonoBehaviour
 
 
         RotatePlayer();
+
     }
 
     public void minionReturn(float minedResource)
     {
-        inventory.AddCurrencyAmount((uint)minedResource * 100);
-        text.text = currency.ToString();
+        inventory.AddCurrencyAmount(minedResource*1000);
+        int amount = (int)inventory.GetCurrency();
+        text.text = amount.ToString();
         currentNrOfMinions--;
     }
 
@@ -151,7 +153,6 @@ public class PlayerController : MonoBehaviour
             MinionScript minionScript = instance.GetComponent<MinionScript>();
             minionScript.ownerPlayer = gameObject;
             minionScript.target = target;
-
         }
     }
 }

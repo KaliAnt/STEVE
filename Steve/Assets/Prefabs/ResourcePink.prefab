@@ -279,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2370644489219088762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.1706624, y: 1.2033656, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2592626618050895652}
@@ -303,6 +303,7 @@ MonoBehaviour:
   currentCapacity: 200
   capacityBar: {fileID: 2411158037237153762}
   bar: {fileID: 2411304430417089892}
+  rarity: 0
 --- !u!58 &2319013389447871176
 CircleCollider2D:
   m_ObjectHideFlags: 0

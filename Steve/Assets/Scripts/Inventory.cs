@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory
 {
-    private uint currency;
+    private float currency;
     private uint[] eyes;
     private float speed;
     private uint fetchers;
@@ -17,12 +17,12 @@ public class Inventory
         this.fetchers = fetchers;
     }
 
-    public void AddCurrencyAmount(uint amount)
+    public void AddCurrencyAmount(float amount)
     {
-        currency += amount;
+        currency =+ amount;
     }
 
-    public bool SubstractCurrencyAmount(uint amount)
+    public bool SubstractCurrencyAmount(float amount)
     {
         if (amount < currency)
         {
@@ -74,5 +74,9 @@ public class Inventory
         return fetchers;
     }
 
+    public float GetCurrency()
+    {
+        return currency;
+    }
 
 }

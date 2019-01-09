@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ShopController : MonoBehaviour
 {
-    public uint visionPrice;
-    public uint fetchersPrice;
-    public uint speedPrice;
+    public float visionPrice;
+    public float fetchersPrice;
+    public float speedPrice;
 
     private Inventory inventory;
     private PlayerController playerController;
