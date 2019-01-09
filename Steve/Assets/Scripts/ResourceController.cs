@@ -20,6 +20,13 @@ public class ResourceController : MonoBehaviour
         bar.enabled = false;
         currentCapacity = maxCapacity;
         capacityBar.fillAmount = 0;
+
+        int childCount = transform.childCount;
+        for(int i = 0; i < childCount; i++)
+        {
+            Transform child = transform.GetChild(i);
+            child.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame

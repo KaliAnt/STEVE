@@ -76,6 +76,12 @@ public class FieldOfView : MonoBehaviour
                 if (!Physics2D.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask))
                 {
                     visibleTargets.Add(target);
+                    int childCount = target.transform.childCount;
+                    for (int j = 0; j < childCount; j++)
+                    {
+                        Transform child = target.transform.GetChild(j);
+                        child.gameObject.SetActive(true);
+                    }
                 }
             }
         }
@@ -84,7 +90,15 @@ public class FieldOfView : MonoBehaviour
     public Vector2 GetDirectionFromAngle(float angleInDegrees)
     {
         float offset = Mathf.Rad2Deg * Mathf.Atan(transform.localPosition.x / transform.localPosition.y);
-        angleInDegrees -= parentPlayer.transform.eulerAngles.z - offset - 90;
+        angleInDegrees -= parentPlayer.transform.eulerAngles.z - offset;
+        if(transform.localPosition.y < 0)
+        {
+            angleInDegrees += 90;
+        }
+        else
+        {
+            angleInDegrees -= 90;
+        }
 
         return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
