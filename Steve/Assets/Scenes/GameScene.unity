@@ -1076,11 +1076,11 @@ RectTransform:
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children: []
   m_Father: {fileID: 729378581}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 106.66675, y: 60}
   m_SizeDelta: {x: 1870.2001, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &710542919
@@ -1242,9 +1242,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 593938988}
   - {fileID: 1674801881}
   - {fileID: 1041520880}
-  - {fileID: 593938988}
   - {fileID: 135019666}
   - {fileID: 1169148033}
   - {fileID: 1811571907}
@@ -2240,6 +2240,9 @@ MonoBehaviour:
   panel: {fileID: 1674801880}
   panelOptions: {fileID: 593938985}
   panelUpgrade: {fileID: 1041520877}
+  panelVision: {fileID: 1811571906}
+  panelFetchers: {fileID: 1169148032}
+  panelSpeed: {fileID: 135019665}
   colorPaused: {r: 0.30980393, g: 0.854902, b: 0.92549026, a: 1}
   colorActive: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &981324595
@@ -2536,7 +2539,7 @@ RectTransform:
   - {fileID: 1161181272}
   - {fileID: 835712077}
   m_Father: {fileID: 729378581}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2943,7 +2946,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 200
+  m_Text: 500
 --- !u!222 &1131213186
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3193,9 +3196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d8b2126369c694fb306f4ead2876f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visionPrice: 0
-  fetchersPrice: 0
-  speedPrice: 0
+  visionPrice: 500
+  fetchersPrice: 150
+  speedPrice: 1000
 --- !u!4 &1200774576
 Transform:
   m_ObjectHideFlags: 0
@@ -3360,7 +3363,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 400
+  m_Text: '1000
+
+'
 --- !u!222 &1344667741
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4293,7 +4298,7 @@ RectTransform:
   - {fileID: 710542920}
   - {fileID: 1115671650}
   m_Father: {fileID: 729378581}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

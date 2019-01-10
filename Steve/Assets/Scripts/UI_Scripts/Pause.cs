@@ -12,6 +12,9 @@ public class Pause : MonoBehaviour
     public GameObject panel;
     public GameObject panelOptions;
     public GameObject panelUpgrade;
+    public GameObject panelVision;
+    public GameObject panelFetchers;
+    public GameObject panelSpeed;
     public Color colorPaused;
     public Color colorActive;
 
@@ -31,6 +34,9 @@ public class Pause : MonoBehaviour
             panel.SetActive(false);
             panelUpgrade.SetActive(false);
             panelOptions.SetActive(false);
+            panelFetchers.SetActive(false);
+            panelSpeed.SetActive(false);
+            panelVision.SetActive(false);
             PauseBttn.image.color = colorActive;
             Time.timeScale = 1;
             isPaused = false;
