@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bbb32531882ccc4bad3ce8af145426d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 5481732602611446057, guid: b031ae5e4b461ab4194a53c8a8860ce8, type: 3}
+  target: {fileID: 1939717200717429016, guid: dde314730972f7b43bb27d65bed8928a, type: 3}
   speed: 5
   rotateSpeed: 5
   attackRange: 15

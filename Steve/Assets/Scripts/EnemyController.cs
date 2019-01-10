@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public GameObject target;
+    //public GameObject target;
+    private GameObject playerTarget;
     public int speed = 5;
     public float rotateSpeed = 5f;
     public float attackRange = 15f;
@@ -12,13 +13,13 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerTarget = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 direction = target.transform.position;
+        Vector2 direction = playerTarget.transform.position;
         //float angle = Mathf.Atan2(direction.y - transform.position.y, direction.x - transform.position.x) * Mathf.Rad2Deg;
         // Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.back);
         //transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotateSpeed * Time.deltaTime);
