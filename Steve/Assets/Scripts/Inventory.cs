@@ -24,7 +24,7 @@ public class Inventory
 
     public bool SubstractCurrencyAmount(float amount)
     {
-        if (amount < currency)
+        if (amount <= currency)
         {
             currency = currency - amount;
             return true;
